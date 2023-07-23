@@ -6,18 +6,54 @@ print("Всего монет")
 
 n=int(input("Введите число n:  "))
 
-k = random.randint(1,n)
+
+
+
+
+k = random.randint(0,n)
 print("Монеты, которые лежат решкой вверх")
 print(k)
 i=0
 k1 = n-k
 print("Монеты, которые лежат гербом вверх")
 print(k1)
-if k<k1 or k1==n:
+
+
+
+
+
+
+
+b = (k / 1) % 10
+b1 = (k1 / 1) % 10
+
+if  b == 1 and n != 11 or b1 == 1 and n != 11:
+
+    j = 'монету'
+
+elif b>1 and b<5 or b1>1 and b1<5:
+    j= 'монеты'
+elif b==0 or b1==0 or k==0 or k1==0:
+    j='монет'
+else:
+    j='монет'
+
+
+
+
+
+
+if k<k1 or k==0:
+    print(f"Нам нужно перевернуть {k} {j}")
+elif k1==n:
     i=k1+k
     print("Все монеты лежат гербом вверх")
     print(i)
-elif k>k1 or k==n:
+elif k>k1 or k==k1 or k1==0:
+    print(f"Нам нужно перевернуть {k1} {j}")
+elif k==n:
     i=k1+k
     print("Все монеты лежат решкой вверх")
     print(i)
+
+
